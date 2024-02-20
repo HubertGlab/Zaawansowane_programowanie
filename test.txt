@@ -1,1 +1,5 @@
-witam jest to nowy plik test w formacie txt rozni sie on od tamtego pliku
+<<<<<<< HEAD
+witam jest to testowy plik w formacie txt powtarzam jest to testowy plik w formacie txt 
+=======
+witam jest to testowy plik w formacie txt powtarzam jest to testowy plik w formacie txt 
+>>>>>>> test
