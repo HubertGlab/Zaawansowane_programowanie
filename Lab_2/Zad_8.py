@@ -1,16 +1,28 @@
 import requests
+import argparse
 
 
-def breweries():
-    r = requests.get('https://api.openbrewerydb.org/v1/breweries?page=1&per_page=20')
+def get_breweries(city=None):
+    url = 'https://api.openbrewerydb.org/v1/breweries?page=1&per_page=20'
+    if city:
+        url = f'https://api.openbrewerydb.org/v1/breweries?by_city={city}&page=1&per_page=20'
+    r = requests.get(url)
     data = r.json()
     lista = []
     for value in data:
         obj = Brewery(value)
         lista.append(obj)
+    return lista
 
-    for index, value in enumerate(lista, start=1):
+
+def print_breweries():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--city")
+    args = parser.parse_args()
+    breweries = get_breweries(args.city)
+    for index, value in enumerate(breweries, start=1):
         print(f'Brewery {index} {value}')
+
 
 class Brewery:
     def __init__(self, data):
@@ -39,5 +51,3 @@ class Brewery:
             f'\nlongitude: {self.longitude}\nlatitude: {self.latitude}\nphone: {self.phone}'
             f'\nwebsite_url: {self.website_url}\nstate: {self.state}\nstreet: {self.street}'
             f'\n')
-
-breweries()
