@@ -51,3 +51,6 @@ class Brewery:
             f'\nlongitude: {self.longitude}\nlatitude: {self.latitude}\nphone: {self.phone}'
             f'\nwebsite_url: {self.website_url}\nstate: {self.state}\nstreet: {self.street}'
             f'\n')
+
+
+print_breweries()
