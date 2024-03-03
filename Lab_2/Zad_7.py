@@ -1,8 +1,16 @@
 import requests
 
-r = requests.get('https://api.openbrewerydb.org/v1/breweries?page=1&per_page=20')
-data = r.json()
-lista = []
+
+def breweries():
+    r = requests.get('https://api.openbrewerydb.org/v1/breweries?page=1&per_page=20')
+    data = r.json()
+    lista = []
+    for value in data:
+        obj = Brewery(value)
+        lista.append(obj)
+
+    for index, value in enumerate(lista, start=1):
+        print(f'Brewery {index}', value)
 
 class Brewery:
     def __init__(self, data):
@@ -32,10 +40,4 @@ class Brewery:
             f'\nwebsite_url: {self.website_url}\nstate: {self.state}\nstreet: {self.street}'
             f'\n')
 
-
-for value in data:
-    obj = Brewery(value)
-    lista.append(obj)
-
-for index, value in enumerate(lista, start=1):
-    print(f'Brewery {index}', value)
+breweries()
