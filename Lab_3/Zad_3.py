@@ -6,7 +6,8 @@ class Property:
         self.address = address
 
     def __str__(self):
-        return f'wymiary: {self.area}, liczba pokoi: {self.rooms}, cena: {self.price}, adres: {self.address}'
+        return f'wymiary: {self.area}, liczba pokoi:' \
+               f' {self.rooms}, cena: {self.price}, adres: {self.address}'
 
 
 class House(Property):
@@ -15,7 +16,8 @@ class House(Property):
         self.plot = plot
 
     def __str__(self):
-        return f'wymiary: {self.area}, liczba pokoi: {self.rooms}, cena: {self.price}, adres: {self.address}, działka:'\
+        return f'wymiary: {self.area}, liczba pokoi: {self.rooms},' \
+               f' cena: {self.price}, adres: {self.address}, działka:'\
                f'rozmiar działki: {self.plot}'
 
 
@@ -25,7 +27,8 @@ class Flat(Property):
         self.floor = floor
 
     def __str__(self):
-        return f'wymiary: {self.area}, liczba pokoi: {self.rooms}, cena: {self.price}, adres: {self.address}, działka:'\
+        return f'wymiary: {self.area}, liczba pokoi: {self.rooms}' \
+               f', cena: {self.price}, adres: {self.address}, działka:'\
                f'liczba pięter: {self.floor}'
 
 

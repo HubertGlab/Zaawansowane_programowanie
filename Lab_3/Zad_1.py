@@ -7,6 +7,6 @@ class Student:
         return sum(self.marks)/len(self.marks) > 50
 
 
-s1 = Student("Madzia", [30,60,80,90])
+s1 = Student("Madzia", [30, 60, 80, 90])
 
 print(s1.is_passed())
