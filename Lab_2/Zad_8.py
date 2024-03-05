@@ -5,7 +5,8 @@ import argparse
 def get_breweries(city=None):
     url = 'https://api.openbrewerydb.org/v1/breweries?page=1&per_page=20'
     if city:
-        url = f'https://api.openbrewerydb.org/v1/breweries?by_city={city}&page=1&per_page=20'
+        url = f'https://api.openbrewerydb.org/v1/' \
+              f'breweries?by_city={city}&page=1&per_page=20'
     r = requests.get(url)
     data = r.json()
     lista = []
@@ -45,11 +46,16 @@ class Brewery:
 
     def __str__(self):
         return (
-            f'\nID: {self.id}\nName: {self.name}\nbrewery_type: {self.brewery_type}\naddress_1: {self.address_1}'
-            f'\naddress_2: {self.address_2}\naddress_3: {self.address_3}\ncity: {self.city}'
-            f'\nstate_province: {self.state_province}\npostal_code: {self.postal_code}\ncountry:{self.country}'
-            f'\nlongitude: {self.longitude}\nlatitude: {self.latitude}\nphone: {self.phone}'
-            f'\nwebsite_url: {self.website_url}\nstate: {self.state}\nstreet: {self.street}'
+            f'\nID: {self.id}\nName: {self.name}'
+            f'\nbrewery_type: {self.brewery_type}\naddress_1: {self.address_1}'
+            f'\naddress_2: {self.address_2}'
+            f'\naddress_3: {self.address_3}\ncity: {self.city}'
+            f'\nstate_province: {self.state_province}'
+            f'\npostal_code: {self.postal_code}\ncountry:{self.country}'
+            f'\nlongitude: {self.longitude}'
+            f'\nlatitude: {self.latitude}\nphone: {self.phone}'
+            f'\nwebsite_url: {self.website_url}'
+            f'\nstate: {self.state}\nstreet: {self.street}'
             f'\n')
 
 
