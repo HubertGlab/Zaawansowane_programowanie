@@ -32,8 +32,4 @@ class Flat(Property):
                f'liczba pięter: {self.floor}'
 
 
-house = House(1000, '60x40', 7, 20000, 'Juana 103')
-flat = Flat(2, '20x30', 4, 10000, 'Dzulsa 200')
 
-print(house)
-print(flat)

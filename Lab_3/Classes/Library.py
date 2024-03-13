@@ -58,24 +58,4 @@ class Order:
                f' {self.employee} {self.order_date}\nKsiążki:\n{book_details}'
 
 
-l1 = Library('Warszawa', 'Mikolaja Kopernika', '38-290', '8-20', 322421567)
-l2 = Library('Buenos Aires', 'Gruszki', '21-410', '12-18', 533424883)
 
-e1 = Employee('Juan', 'Espanol', '18.07.1960', '18.05.1940',
-              'Katowice', 'Wadowicka', '18-190', 554344675)
-e2 = Employee('Michal', 'Banan', '21.02.1970', '13.06.1940',
-              'Gorzow', 'Michalska', '30-300', 123456789)
-e3 = Employee('John', 'Gorlicki', '23.08.2000', '18.05.1980',
-              'Michalice', 'Michalicka', '10-120', 332244189)
-
-b1 = Book(l1, '07.07.1990', 'Michał', 'Gdanski', '120')
-b2 = Book(l1, '02.03.2001', 'Henryk', 'Walski', '310')
-b3 = Book(l2, '04.05.2002', 'Paweł', 'Szklarski', '400')
-b4 = Book(l2, '04.02.2003', 'Patryk', 'Wolski', '800')
-b5 = Book(l2, '08.09.2001', 'Henryk', 'Malobadzki', '112')
-
-o1 = Order(e1, 'Andrzej Hubert', [b1, b2, b3], '07.07.2017')
-o2 = Order(e2, 'Julia Juliowska', [b2], '07.07.2016')
-
-print(o1)
-print(o2)
